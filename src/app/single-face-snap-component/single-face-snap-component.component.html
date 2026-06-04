@@ -1,0 +1,28 @@
+<div class="face-snap-card" [ngClass]="{snapped: userHasSnapped}">
+    <!-- ngClass : modifier de manière dynamique des classes-->
+
+    <h2>{{facesnap.title |uppercase}}</h2> 
+    <!-- {{ }} string interpolation-->
+    @if (facesnap.location){
+        <p>Localisation : {{facesnap.location}}</p>
+    }@else {
+        <p>Localisation inconnu</p>
+    }
+    <!-- Affiche la localisation que si elle est présente -->
+
+    <img [src]="facesnap.imageUrl" [alt]="facesnap.title" >
+    <!-- crochet autour de src permet de dire que c'est du code typescript -->
+    <!-- alt = alternative à l'image -->
+    <!-- [] databinding ou attribute binding-->
+    <p>{{facesnap.description}}</p>
+    <p>FaceSnap créée le {{facesnap.createdAt |date:'d MMMM yyyy, à HH:mm'}}</p>
+    <p>
+        <button (click)="onSnap()">{{snapButtonText}}</button>
+        Nombre de like : <span [ngStyle]="{color: 'rgb(0,'+facesnap.snaps+',0)'}">{{facesnap.snaps}}</span>
+    </p>
+    <!-- () eventbinding-->
+    <!-- ngStyle : modifier de manière dynamique les styles d'un élément-->
+    <p>Nombre de vues : {{ myPrice|currency:'EUR':'code'}}</p>
+
+
+</div>

@@ -1,0 +1,64 @@
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+.logo {
+  position: absolute;
+  left: 200px;
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0 10px;
+  font-size: 42px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  color: #333;
+}
+
+.active {
+  color: #666;
+  text-decoration: underline;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration:  underline black 2px;
+}
+
+.connexionButton {
+  position: absolute;
+  right: 200px;
+  background-color: rgb(7, 7, 7);
+  color: white;
+  box-shadow: rgb(83, 80, 80) 3px 3px 7px;
+  cursor: pointer;
+}
+
+.connexionButton:hover {
+  background-color: #f8f6f6;
+  color: black;
+}

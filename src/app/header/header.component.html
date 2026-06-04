@@ -1,0 +1,19 @@
+<header>
+    <img (click)="goHome()" src="logo_cinema2.png" alt="Logo Cinéma L'étoile" class="logo">
+
+    <div class="header-content">
+        <h1 class="title">Cinéma L'étoile</h1>
+        
+        <nav class="nav-links">
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+            <a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a>
+            <a routerLink="affiche" routerLinkActive="active">À l'affiche</a>
+            <a routerLink="cinema" routerLinkActive="active">Le cinéma</a>
+            <a routerLink="contact" routerLinkActive="active">Contact</a>
+            <a routerLink="compte" routerLinkActive="active">Mon compte</a>
+        </nav>
+    </div>
+
+    <button class="connexionButton">Se connecter</button>
+    
+</header>

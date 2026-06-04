@@ -1,0 +1,44 @@
+.landing-block {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+button {
+  font-size: 18px;
+  position: relative;
+  background-color: #030303;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  box-shadow: rgb(83, 80, 80) 3px 3px 7px;
+}
+
+button:hover {
+  background-color: #f8f6f6;
+  color: black;
+}
+
+.carrousel-conteneur {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carrousel-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+
+.carrousel-images img {
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  border-radius: 8px;
+}
