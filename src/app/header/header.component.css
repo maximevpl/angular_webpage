@@ -5,6 +5,7 @@ header {
   justify-content: center;
   background-color: #ffffff;
   padding: 15px;
+  box-shadow: rgb(83, 80, 80) 3px 3px 7px;
 }
 
 .logo {

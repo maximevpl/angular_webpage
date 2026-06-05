@@ -6,6 +6,7 @@ footer {
   background-color: #ffffff;
   padding: 15px;
   height: 70px;
+  box-shadow: rgb(83, 80, 80) 3px 3px 7px;
 }
 
 .logo {
