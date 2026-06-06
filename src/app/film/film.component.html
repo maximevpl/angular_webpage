@@ -1,25 +1,41 @@
 <div class="film-card" [ngClass]="{snapped: userHasSnapped}">
-    <!-- ngClass : modifier de manière dynamique des classes-->
 
     <h1>{{film.title |uppercase}}</h1> 
     <h4>{{film.genre}}</h4>
-    <h3 class="resume">Résumé :</h3>
-        <p>{{film.description}}</p>
-    <h3>Réalisateurs :</h3>
-    <ul>
-        @for (realisator of film.realisator; track $index) {
-            <li>{{realisator}}</li>
-        }
-    </ul>
-    <h3>Acteurs :</h3>
-    <ul>
-        @for (actor of film.actors; track $index) {
-            <li>{{actor}}</li>
-        }
-    </ul>
-    <h3>Durée :</h3><p>{{film.duration}} minutes</p>
-    <button>Bande d'annonce</button>
-    <img [src]="film.imageUrl" [alt]="film.title" >
+    
+    <div class="film-container">    
+        <div class="film-details">
+            
+            <h3 class="resume">Résumé :</h3>
+            <p>{{film.description}}</p>
+            <h3>Réalisateurs :</h3>
+            <ul>
+                @for (realisator of film.realisator; track $index) {
+                    <li>{{realisator}}</li>
+                }
+            </ul>
+            <h3>Acteurs :</h3>
+            <ul>
+                @for (actor of film.actors; track $index) {
+                    <li>{{actor}}</li>
+                }
+            </ul>
+            <p ><span class="duration">Durée :</span> {{film.duration}} minutes</p>
+        </div>
+        
+        <div class="image-container">
+            <img class="film-image" [src]="film.imageUrl" [alt]="film.title" (click)="openImage()" >
 
+            <button class="bouton-annonce" >Bande d'annonce</button>
+        </div>
+        
 
+    </div>
 </div>
+
+<dialog #maPopup class="popup-image">
+    <button class="bouton-fermer" (click)="closeImage()">&times;</button>
+    <div class="popup-contenu">
+        <img [src]="film.imageUrl" alt="Image agrandie">
+    </div>
+</dialog>

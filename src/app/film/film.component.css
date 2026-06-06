@@ -3,36 +3,136 @@
   width: 50%;
   margin: 20px auto;
   padding: 10px 30px;
-  box-shadow: lightgray 4px 4px 20px;
-  img {
-    width: 50%;
-  }
-  h2 {
+  box-shadow: rgb(59, 57, 57) 4px 4px 20px;
+  background-color: white;
+
+  h1 {
     margin-bottom: 0;
   }
+  h4 {
+    margin-top:0;
+    color: gray;
+  }
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
   p {
+    margin-top: 0;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
+  }
+  li{
+    margin-top: 0;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  ul{
+    margin-top: 5px;
   }
 }
-.snapped {
 
-  background-color: rgb(68 231 68 / 0.4);
+.film-container {
+  display: flex;         
+  flex-direction: row;    
+  justify-content: space-between; 
+  gap: 20px;             
+  align-items: flex-start;
+}
 
-  color: darkgreen;
+.film-details {
+  flex: 1;
+}
 
-  button {
+.duration {
+  font-size: 20px;  
+  font-weight: bold; 
+  margin-right: 5px;      /* Petit espace avant le texte qui suit */
+}
 
-    box-shadow: lightgreen 3px 3px 7px;
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: 15px;            
+  flex: 0 0 auto;
+}
 
-    color: darkgreen;
+.film-image {
+  margin-top: 20px;
+  width: 100%;
+  cursor: pointer;
+  flex: 0 0 auto; 
+  max-width: 230px; 
+  height: auto; 
+}
 
-    &:active {
+.bouton-annonce{
+  width: 100%;            
+  max-width: 300px;   
+  padding: 10px 20px ;
+  margin-right: 0 ;    
+  background-color: #050101; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 20px;
+}
 
-      box-shadow: lightgreen 0 0 5px;
+.popup-image {
+  border: none;
+  border-radius: 8px;
+  padding: 40px 20px 20px 20px;
+  max-width: 900px;
+  max-height: 1700px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  
+}
 
-    }
+.popup-image::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
 
-  }
+.popup-contenu img {
+  max-width: 90%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto;
+}
 
+.bouton-fermer {
+  position: absolute;
+  margin-right: 0;
+  padding: 0;
+  box-shadow: none;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+
+  background: none;
+  border-radius: 50%;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.bouton-fermer:hover {
+  background-color: #ff4d4f; 
+  transform: scale(1.1);
 }
