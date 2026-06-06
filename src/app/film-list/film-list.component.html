@@ -1,1 +1,3 @@
-<p>film-list works!</p>
+@for (film of films; track film.title){
+    <app-film [film]="film"/>
+}
