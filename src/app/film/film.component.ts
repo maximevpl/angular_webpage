@@ -3,6 +3,7 @@ import { Input, OnInit } from '@angular/core';
 import { CurrencyPipe, DatePipe, NgClass, NgStyle, UpperCasePipe } from '@angular/common';
 import { FilmModel } from '../models/film-model';
 import { FilmService } from '../services/film-service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-film',
@@ -16,23 +17,38 @@ import { FilmService } from '../services/film-service';
 export class FilmComponent implements OnInit{
     
   @Input() film!: FilmModel;
+  safeTrailerUrl!: SafeResourceUrl;
+  openedTrailer: boolean = false;
 
-  @ViewChild('maPopup') popup!: ElementRef<HTMLDialogElement>;
+  @ViewChild('popupImage') popupImage!: ElementRef<HTMLDialogElement>;
+
+  @ViewChild('popupTrailer') popupTrailer!: ElementRef<HTMLDialogElement>;
   
   userHasSnapped!: boolean;
 
-  constructor(private filmService: FilmService) {}
+  constructor(private filmService: FilmService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-      this.userHasSnapped = false;
+    this.safeTrailerUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.film.trailerUrl);
+    this.userHasSnapped = false;
   }
 
   openImage(): void {
-    this.popup.nativeElement.showModal();
+    this.popupImage.nativeElement.showModal();
   }
 
   closeImage(): void {
-    this.popup.nativeElement.close();
+    this.popupImage.nativeElement.close();
+  }
+
+  onTrailer(){
+    this.openedTrailer = true;
+    this.popupTrailer.nativeElement.showModal();
+  }
+
+  closeTrailer(){
+    this.openedTrailer = false;
+    this.popupTrailer.nativeElement.close();
   }
 
 

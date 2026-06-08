@@ -26,16 +26,25 @@
         <div class="image-container">
             <img class="film-image" [src]="film.imageUrl" [alt]="film.title" (click)="openImage()" >
 
-            <button class="bouton-annonce" >Bande d'annonce</button>
+            <button class="bouton-annonce" (click)="onTrailer()">Bande d'annonce</button>
         </div>
         
 
     </div>
 </div>
 
-<dialog #maPopup class="popup-image">
-    <button class="bouton-fermer" (click)="closeImage()">&times;</button>
+<dialog #popupImage class="popup-image">
+    <button  class="bouton-fermer" (click)="closeImage()">&times;</button>
     <div class="popup-contenu">
         <img [src]="film.imageUrl" alt="Image agrandie">
     </div>
+</dialog>
+
+<dialog #popupTrailer class="popup-trailer">
+    <button class="bouton-fermer" (click)="closeTrailer()">&times;</button>
+    @if (this.openedTrailer) {
+        <div class="popup-contenu" >
+            <iframe width="560" height="315" [src]="this.safeTrailerUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    }
 </dialog>

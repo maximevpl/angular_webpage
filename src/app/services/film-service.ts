@@ -17,7 +17,7 @@ private films: FilmModel[] = [
             ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Elliot Page'],
             148,
             new Date('2010-07-16'),
-            'https://www.youtube.com/watch?v=YoHD9XEInc0'
+            'https://www.youtube.com/embed/YoHD9XEInc0?si=51pjNzOgl5alxkGO'
         ),
         new FilmModel(
             'Interstellar',
@@ -28,7 +28,7 @@ private films: FilmModel[] = [
             ['Matthew McConaughey', 'Anne Hathaway', 'Jessica Chastain'],
             169,
             new Date('2014-11-07'),
-            'https://www.youtube.com/watch?v=zSWdZVtXT7E'
+            'https://www.youtube.com/embed/zSWdZVtXT7E?si=gAIehTnLx4DmRySx'
         ),
 
         new FilmModel(
@@ -40,7 +40,7 @@ private films: FilmModel[] = [
             ['Christian Bale', 'Heath Ledger', 'Aaron Eckhart'],
             152,
             new Date('2008-07-18'),
-            'https://www.youtube.com/watch?v=EXeTwQWrcwY'
+            'https://www.youtube.com/embed/EXeTwQWrcwY?si=PtrTNlgZRBPt6fyH'
         ),
 
         new FilmModel(
@@ -52,7 +52,7 @@ private films: FilmModel[] = [
             ['Keanu Reeves', 'Laurence Fishburne', 'Carrie-Anne Moss'],
             136,
             new Date('1999-03-31'),
-            'https://www.youtube.com/watch?v=vKQi3bBA1y8'
+            'https://www.youtube.com/embed/vKQi3bBA1y8?si=M0Smx9flf8KtbtYV'
         ),
 
         new FilmModel(
@@ -64,7 +64,7 @@ private films: FilmModel[] = [
             ['Leonardo DiCaprio', 'Kate Winslet'],
             195,
             new Date('1997-12-19'),
-            'https://www.youtube.com/watch?v=kVrqfYjkTdQ'
+            'https://www.youtube.com/embed/kVrqfYjkTdQ?si=85KeFN-DoPNSJR9p'
         ),
 
         new FilmModel(
@@ -76,7 +76,7 @@ private films: FilmModel[] = [
             ['Sam Worthington', 'Zoe Saldana', 'Sigourney Weaver'],
             162,
             new Date('2009-12-18'),
-            'https://www.youtube.com/watch?v=5PSNL1qE6VY'
+            'https://www.youtube.com/embed/5PSNL1qE6VY?si=rfK4RAGhSpKWscqu'
         ),
 
         new FilmModel(
@@ -88,7 +88,7 @@ private films: FilmModel[] = [
             ['Russell Crowe', 'Joaquin Phoenix'],
             155,
             new Date('2000-05-05'),
-            'https://www.youtube.com/watch?v=owK1qxDselE'
+            'https://www.youtube.com/embed/owK1qxDselE?si=sIpk7kFqLShJoSlz'
         ),
 
         new FilmModel(
@@ -100,7 +100,7 @@ private films: FilmModel[] = [
             ['Tom Hanks', 'Robin Wright'],
             142,
             new Date('1994-07-06'),
-            'https://www.youtube.com/watch?v=bLvqoHBptjg'
+            'https://www.youtube.com/embed/bLvqoHBptjg?si=i0J-AbhynoPW3rUz'
         ),
 
         new FilmModel(
@@ -112,7 +112,7 @@ private films: FilmModel[] = [
             ['Elijah Wood', 'Ian McKellen', 'Viggo Mortensen'],
             178,
             new Date('2001-12-19'),
-            'https://www.youtube.com/watch?v=V75dMMIW2B4'
+            'https://www.youtube.com/embed/V75dMMIW2B4?si=UOgRGX-DKwWSqQG3'
         ),
 
         new FilmModel(
@@ -124,7 +124,7 @@ private films: FilmModel[] = [
             ['Tom Cruise', 'Miles Teller', 'Jennifer Connelly'],
             131,
             new Date('2022-05-27'),
-            'https://www.youtube.com/watch?v=giXco2jaZ_4'
+            'https://www.youtube.com/embed/giXco2jaZ_4?si=-dH-vvIufnnZvYmv'
         )
     ];
 

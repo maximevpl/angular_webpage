@@ -48,7 +48,7 @@
 .duration {
   font-size: 20px;  
   font-weight: bold; 
-  margin-right: 5px;      /* Petit espace avant le texte qui suit */
+  margin-right: 5px;   
 }
 
 .image-container {
@@ -86,7 +86,7 @@
 .popup-image {
   border: none;
   border-radius: 8px;
-  padding: 40px 20px 20px 20px;
+  padding: 20px;
   max-width: 900px;
   max-height: 1700px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -135,4 +135,16 @@
 .bouton-fermer:hover {
   background-color: #ff4d4f; 
   transform: scale(1.1);
+}
+
+.popup-trailer {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.popup-trailer::backdrop {
+  background: rgba(0, 0, 0, 0.7);
 }
