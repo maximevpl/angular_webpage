@@ -38,3 +38,10 @@ app-root {
   .content {
   flex: 1;
 }
+
+.head {
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background-color: #ffffff; 
+  }

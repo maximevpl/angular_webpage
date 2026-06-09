@@ -10,6 +10,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   imports: [
     NgClass,
     UpperCasePipe,
+    DatePipe
   ],
   templateUrl: './film.component.html',
   styleUrl: './film.component.css'
@@ -19,6 +20,8 @@ export class FilmComponent implements OnInit{
   @Input() film!: FilmModel;
   safeTrailerUrl!: SafeResourceUrl;
   openedTrailer: boolean = false;
+  private scrollPosition: number = 0;
+  timeDuration!: string;
 
   @ViewChild('popupImage') popupImage!: ElementRef<HTMLDialogElement>;
 
@@ -30,18 +33,28 @@ export class FilmComponent implements OnInit{
 
   ngOnInit(): void {
     this.safeTrailerUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.film.trailerUrl);
+    this.timeDuration = this.timeConversion(this.film.duration);
     this.userHasSnapped = false;
   }
 
+  timeConversion(minutes: number): string {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours}h ${remainingMinutes}min`;
+  }
+
   openImage(): void {
+    this.scrollPosition = window.scrollY;
     this.popupImage.nativeElement.showModal();
   }
 
   closeImage(): void {
     this.popupImage.nativeElement.close();
+    window.scrollTo({ top: this.scrollPosition, behavior: 'instant' });
   }
 
   onTrailer(){
+    this.scrollPosition = window.scrollY;
     this.openedTrailer = true;
     this.popupTrailer.nativeElement.showModal();
   }
@@ -49,6 +62,7 @@ export class FilmComponent implements OnInit{
   closeTrailer(){
     this.openedTrailer = false;
     this.popupTrailer.nativeElement.close();
+    window.scrollTo({ top: this.scrollPosition, behavior: 'instant' });
   }
 
 

@@ -6,7 +6,6 @@
         
         <nav class="nav-links">
             <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
-            <a routerLink="facesnaps" routerLinkActive="active">FaceSnaps</a>
             <a routerLink="film-list" routerLinkActive="active">À l'affiche</a>
             <a routerLink="cinema-informations" routerLinkActive="active">Le cinéma</a>
             <a routerLink="contact" routerLinkActive="active">Contact</a>
@@ -14,6 +13,13 @@
         </nav>
     </div>
 
-    <button class="connexionButton">Se connecter</button>
+    <button class="connexionButton" (click)="onConnexion()">Se connecter</button>
     
 </header>
+
+<dialog #popupConnexion class="popup-connexion">
+    <button  class="bouton-fermer" (click)="closeConnexion()">&times;</button>
+    <div class="popup-contenu">
+        <app-connexion></app-connexion>
+    </div>
+</dialog>

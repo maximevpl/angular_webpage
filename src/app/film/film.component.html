@@ -1,28 +1,31 @@
 <div class="film-card" [ngClass]="{snapped: userHasSnapped}">
 
     <h1>{{film.title |uppercase}}</h1> 
-    <h4>{{film.genre}}</h4>
+    <h4 class="description">{{film.genre}}</h4>
     
     <div class="film-container">    
-        <div class="film-details">
+        <div class="film-resume">
             
             <h3 class="resume">Résumé :</h3>
             <p>{{film.description}}</p>
-            <h3>Réalisateurs :</h3>
+        </div>
+        <div class="film-infos">
+            <h4>Réalisateurs :</h4>
             <ul>
                 @for (realisator of film.realisator; track $index) {
                     <li>{{realisator}}</li>
                 }
             </ul>
-            <h3>Acteurs :</h3>
+            <h4>Acteurs :</h4>
             <ul>
                 @for (actor of film.actors; track $index) {
                     <li>{{actor}}</li>
                 }
             </ul>
-            <p ><span class="duration">Durée :</span> {{film.duration}} minutes</p>
+            <p ><span class="duration">Durée :</span> {{this.timeDuration}}</p>
+            <p ><span class="duration">Date de sortie :</span> {{film.releaseDate | date:' d MMMM y'}}</p>
         </div>
-        
+         
         <div class="image-container">
             <img class="film-image" [src]="film.imageUrl" [alt]="film.title" (click)="openImage()" >
 

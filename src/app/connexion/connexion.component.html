@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email">
+    
+    @if (loginForm.get('email')?.touched && loginForm.get('email')?.invalid) {
+      <p class="error">L'adresse email n'est pas valide.</p>
+    }
+  </div>
+
+  <div>
+    <label for="password">Mot de passe</label>
+    <input id="password" type="password" formControlName="password">
+    
+    @if (loginForm.get('password')?.touched && loginForm.get('password')?.invalid) {
+      <p class="error">Le mot de passe doit faire au moins 8 caractères.</p>
+    }
+  </div>
+
+  <button type="submit">Se connecter</button>
+</form>
